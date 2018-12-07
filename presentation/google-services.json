@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "816799504388",
+    "firebase_url": "https://lonelyfinder-4a1ad.firebaseio.com",
+    "project_id": "lonelyfinder-4a1ad",
+    "storage_bucket": "lonelyfinder-4a1ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816799504388:android:d5e13893c8606d75",
+        "android_client_info": {
+          "package_name": "inkant1990.com.lonelyfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816799504388-475p0skgd8sumguhcnff35gbg748oqpl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "inkant1990.com.lonelyfinder",
+            "certificate_hash": "23632f27f0c9589fed7e2693a122e839c6218978"
+          }
+        },
+        {
+          "client_id": "816799504388-r2o4kknchkcu50aur9kd06jfilonu6sp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMPSK4hexyRo7CEJJABPPS0dkfo7in7-c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "816799504388-r2o4kknchkcu50aur9kd06jfilonu6sp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
