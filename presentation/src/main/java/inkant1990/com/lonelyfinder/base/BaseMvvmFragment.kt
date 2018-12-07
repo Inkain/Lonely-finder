@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.android.databinding.library.baseAdapters.BR
+import inkant1990.com.lonelyfinder.BR
 
 abstract class BaseMvvmFragment<VM : BaseViewModel<R>,
         R : BaseRouter<*>,
