@@ -1,7 +1,7 @@
 package inkant1990.com.lonelyfinder
 
 import android.app.Application
-import inkant1990.com.lonelyfinder.internal.components.DaggerApplicationComponent
+//import inkant1990.com.lonelyfinder.internal.components.DaggerApplicationComponent
 import inkant1990.com.lonelyfinder.internal.modules.ApplicationModule
 
 
@@ -14,15 +14,15 @@ class AndroidApplication : Application() {
     }
 
     val component by lazy(mode = LazyThreadSafetyMode.NONE) {
-        DaggerApplicationComponent.builder()
-            .applicationModule(ApplicationModule(this))
-            .build()
+//        DaggerApplicationComponent.builder()
+//            .applicationModule(ApplicationModule(this))
+//            .build()
     }
 
     override fun onCreate() {
         super.onCreate()
-        //injectMembers()
+//        injectMembers()
     }
 
-   // private fun injectMembers() = component.inject(this)
+//    private fun injectMembers() = component.inject(this)
 }
