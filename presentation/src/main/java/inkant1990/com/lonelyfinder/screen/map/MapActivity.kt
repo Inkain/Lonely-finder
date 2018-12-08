@@ -2,11 +2,14 @@ package inkant1990.com.lonelyfinder.screen.map
 
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
+import android.graphics.Color
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.TextView
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
@@ -31,11 +34,12 @@ class MapActivity : BaseMvvmActivity<
 
     lateinit var imHere: Location
 
+    val zoom = 13F
+
     val locationListener = MyLocationListener()
 
-    val getUsers: GetUsers = GetUsers(UserRepository(Utils(), ApiGet()),UIThread())
+    val getUsers: GetUsers = GetUsers(UserRepository(Utils(), ApiGet()), UIThread())
 
-    val directionDisplay = new .maps.DirectionRenders()
 
     override fun prodiveViewModel()
             : MapViewModel = ViewModelProviders.of(this).get(MapViewModel::class.java)
@@ -65,7 +69,7 @@ class MapActivity : BaseMvvmActivity<
         val pos = LatLng(imHere.latitude, imHere.longitude)
         val cameraPosition = CameraPosition.Builder()
                 .target(pos)
-                .zoom(14F)
+                .zoom(zoom)
                 .build()
         val cameraUpdate = CameraUpdateFactory.newCameraPosition(cameraPosition)
         val maps = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
@@ -89,9 +93,10 @@ class MapActivity : BaseMvvmActivity<
                         maps.getMapAsync { map ->
                             map.addMarker(MarkerOptions()
                                     .position(LatLng(it.latitude, it.longitude!!))
+                                    .title(it.status)
+                                    .snippet(it.votes)
                                     .icon(BitmapDescriptorFactory
                                             .defaultMarker(BitmapDescriptorFactory.HUE_RED)))
-                                    .title = it.status
                         }
                     }
                 },
